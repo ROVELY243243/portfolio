@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="mb-4">
+        <a href="{% url 'index' %}" class="btn btn-outline-secondary">&larr; Retour à l'accueil</a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <h1 class="display-4 fw-bold mb-3">{{ projet.titre }}</h1>
+            
+            {% if projet.image %}
+                <img src="{{ projet.image.url }}" class="img-fluid rounded shadow-sm mb-4" alt="{{ projet.titre }}">
+            {% endif %}
+
+            <div class="content-body text-secondary">
+                <h3>Description du projet</h3>
+                <p>{{ projet.description|linebreaks }}</p>
+                
+                <h3 class="mt-4">Détails techniques</h3>
+                <div class="bg-light p-4 rounded">
+                    <p>{{ projet.description|linebreaks }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card p-4 shadow-sm border-0 sticky-top" style="top: 20px;">
+                <h5 class="fw-bold mb-3">Technologies utilisées</h5>
+                <div class="mb-4">
+                    {% for tech in projet.tech_list %}
+                        <span class="badge bg-primary me-1 mb-2">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+
+                <h5 class="fw-bold mb-3">Actions</h5>
+                <div class="d-grid gap-2">
+                    {% if projet.lien_github %}
+                        <a href="{{ projet.lien_github }}" class="btn btn-dark" target="_blank">Voir le code (GitHub)</a>
+                    {% endif %}
+                    {% if projet.lien_demonstration %}
+                        <a href="{{ projet.lien_demonstration }}" class="btn btn-success" target="_blank">Voir la démo / Vidéo</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
