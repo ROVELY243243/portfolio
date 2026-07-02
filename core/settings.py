@@ -9,12 +9,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@jydy8p-297j)6m%t-(p$9$-n*dyie5eo-g+c@9z%g6ct1(@-$'
+SECRET_KEY = 'django-insecure-@jydy8p-297j)6m%t
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rovely.pythonanywhere.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
@@ -115,5 +115,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'rovelymayanda1@gmail.com'
-EMAIL_HOST_PASSWORD = 'wcjf qicc yvzq zjqo'  # Code secret généré via ton compte Google
+EMAIL_HOST_PASSWORD =   # Code secret généré via ton compte Google
 DEFAULT_FROM_EMAIL = 'Rovely Mayanda <rovelymayanda1@gmail.com>'
